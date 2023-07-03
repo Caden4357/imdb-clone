@@ -1,4 +1,3 @@
-import React from 'react'
 import imdbLogo from '../../assets/imdb-logo.png'
 type HeaderProps = {
     title: string

@@ -1,6 +1,5 @@
-import React from 'react'
-import mainLogo from '../../assets/main-logo.png'
 import { Link } from 'react-router-dom'
+import mainLogo from '../../assets/main-logo.png'
 export default function LeftSide() {
     return (
         <div className='w-2/4 flex items-center justify-between'>

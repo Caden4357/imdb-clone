@@ -1,4 +1,4 @@
-import {useState, createContext, ReactNode} from 'react'
+import { ReactNode, createContext, useState } from 'react'
 
 import { TvShowType } from '../types/TvShowType'
 type TvShowContextType = {

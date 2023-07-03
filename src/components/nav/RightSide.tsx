@@ -1,6 +1,5 @@
-import React from 'react'
-import useColorMode from "../../hooks/useColorMode"
 import darkMode from '../../assets/moon.png'
+import useColorMode from "../../hooks/useColorMode"
 export default function RightSide() {
     const [colorMode, setColorMode] = useColorMode() 
     return (

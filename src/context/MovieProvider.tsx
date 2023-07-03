@@ -1,4 +1,4 @@
-import {useState, createContext, ReactNode} from 'react'
+import { ReactNode, createContext, useState } from 'react'
 
 import { Movie } from '../types/MovieType'
 type MovieContextType = {

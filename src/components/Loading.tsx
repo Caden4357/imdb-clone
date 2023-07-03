@@ -1,5 +1,4 @@
-import React from 'react'
-import HomepageFilmContainer from './HomepageFilmContainer'
+
 
 export default function Loading() {
     console.log('Loading');

@@ -1,11 +1,10 @@
-import React, { useState, useContext } from 'react'
-import axios from 'axios'
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MovieContext } from '../../context/MovieProvider';
 import searchMovies from '../../lib/SearchMovies';
-import { useNavigate } from 'react-router-dom';
 export default function SearchForm() {
     const navigate = useNavigate()
-    const { movies, setMovies } = useContext(MovieContext)
+    const { setMovies } = useContext(MovieContext)
     const [search, setSearch] = useState('')
 
     const searchMovie = async (e: React.FormEvent<HTMLFormElement>) => {

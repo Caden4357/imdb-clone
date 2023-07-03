@@ -1,4 +1,3 @@
-import React from 'react'
 import { CastType } from '../../types/CastType'
 type CastProps = {
     cast: CastType[]

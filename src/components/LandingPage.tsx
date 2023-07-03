@@ -1,13 +1,13 @@
 import { useContext, useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import { MovieContext } from "../context/MovieProvider"
-import { Movie } from "../types/MovieType"
+import { TvShowContext } from "../context/TvShowProvider"
 import getPopularMovies from "../lib/GetPopularMovies"
+import getPopularTvSeries from '../lib/GetPopularTvSeries'
+import { Movie } from "../types/MovieType"
+import { TvShowType } from "../types/TvShowType"
 import HomepageFilm from "./HomepageFilm"
 import HomepageFilmContainer from "./HomepageFilmContainer"
-import { useLocation } from "react-router-dom"
-import getPopularTvSeries from '../lib/GetPopularTvSeries'
-import { TvShowType } from "../types/TvShowType"
-import { TvShowContext } from "../context/TvShowProvider"
 import Loading from "./Loading"
 
 
