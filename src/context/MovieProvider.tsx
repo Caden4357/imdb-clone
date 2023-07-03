@@ -10,6 +10,8 @@ export const MovieContext = createContext<MovieContextType>({
     setMovies: () => {}
 })
 
+
+
 type ChildrenType = {
     children?: ReactNode | ReactNode[]
 }
