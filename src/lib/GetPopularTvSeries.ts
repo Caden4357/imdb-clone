@@ -6,7 +6,7 @@ const options = {
     params: { language: 'en-US', page: '1' },
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWNjYTJmOGViZjI4ZGFmZWFmNGI4NzhjYjlkZDUzZCIsInN1YiI6IjY0ODI1NjgzYmYzMWYyNTA1NzA1MTE2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.R5DcsDYY4ZRWQysStaJQEbEWaDKYLDRJ20gl-8p5ERE'
+        Authorization: import.meta.env.VITE_TMDB_API_KEY
     }
 };
 
