@@ -12,6 +12,5 @@ const options = {
 
 export default async function getPopularTvSeries() {
     const response = await axios.request(options);
-    console.log(response.data);
     return response.data;
 }

@@ -26,7 +26,6 @@ export default function LandingPage() {
         else if (location.pathname === '/tvshows') {
             async function getTvShows() {
                 const popularTvSeries = await getPopularTvSeries()
-                console.log('SHOWS', popularTvSeries);
                 setTvShows(popularTvSeries.results)
             }
             getTvShows()

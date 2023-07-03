@@ -29,8 +29,6 @@ export default async function getOneMovie(id: string) {
     options.url = `https://api.themoviedb.org/3/movie/${id}/watch/providers`
     const streamingInfo = await axios.request(options);
     response.data.streamingInfo = streamingInfo.data.results.US;
-    console.log(streamingInfo.data.results.US);
 
-    
     return response.data;
 }
