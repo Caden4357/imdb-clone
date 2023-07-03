@@ -5,7 +5,7 @@ type StreamingInfoProps = {
     link: string
 }
 
-export default function StreamingInfo({ rent, buy, link }: StreamingInfoProps) {
+export default function StreamingInfo({ rent}: StreamingInfoProps) {
     return (
         <div className='w-1/4 flex flex-wrap'>
             {
