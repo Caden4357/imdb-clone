@@ -4,6 +4,8 @@ import { MovieContext } from "../context/MovieProvider"
 import { TvShowContext } from "../context/TvShowProvider"
 import getPopularMovies from "../lib/GetPopularMovies"
 import getPopularTvSeries from '../lib/GetPopularTvSeries'
+import getInTheaters from "../lib/InTheaters"
+import getTop100AllTime from "../lib/Top100AllTime"
 import { Movie } from "../types/MovieType"
 import { TvShowType } from "../types/TvShowType"
 import HomepageFilm from "./HomepageFilm"
@@ -23,13 +25,28 @@ export default function LandingPage() {
             }
             getMovies()
     }
-        else if (location.pathname === '/tvshows') {
-            async function getTvShows() {
-                const popularTvSeries = await getPopularTvSeries()
-                setTvShows(popularTvSeries.results)
-            }
-            getTvShows()
+    else if (location.pathname === '/tvshows') {
+        async function getTvShows() {
+            const popularTvSeries = await getPopularTvSeries()
+            setTvShows(popularTvSeries.results)
+        }
+        getTvShows()
     }
+    else if(location.pathname === '/theaters'){
+        async function getMoviesInTheaters() {
+            const moviesInTheaters = await getInTheaters()
+            setMovies(moviesInTheaters)
+        }
+        getMoviesInTheaters()
+    }
+    else if(location.pathname === '/topAllTime'){
+        async function getTop100AllTimeMovies() {
+            const top100AllTime = await getTop100AllTime()
+            setMovies(top100AllTime)
+        }
+        getTop100AllTimeMovies()
+    }
+        
     }, [location.pathname])
 
 
@@ -71,6 +88,42 @@ export default function LandingPage() {
         )
     }
     else if(location.pathname === '/search' && movies && Array.isArray(movies)){
+        const moveisComponents:JSX.Element[] = movies.map((movie: Movie) => {
+            return (
+                <HomepageFilm 
+                    key={movie.id} 
+                    id={movie.id} 
+                    title={movie.title} 
+                    poster_path={movie.poster_path} 
+                    mediaType={movie.media_type? movie.media_type: 'movie'} 
+                />
+            )
+        })
+        return (
+            <HomepageFilmContainer>
+                {moveisComponents}
+            </HomepageFilmContainer>
+        )
+    }
+    else if(location.pathname === '/theaters' && movies && Array.isArray(movies)){
+        const moveisComponents:JSX.Element[] = movies.map((movie: Movie) => {
+            return (
+                <HomepageFilm 
+                    key={movie.id} 
+                    id={movie.id} 
+                    title={movie.title} 
+                    poster_path={movie.poster_path} 
+                    mediaType={movie.media_type? movie.media_type: 'movie'} 
+                />
+            )
+        })
+        return (
+            <HomepageFilmContainer>
+                {moveisComponents}
+            </HomepageFilmContainer>
+        )
+    }
+    else if(location.pathname === '/topAllTime' && movies && Array.isArray(movies)){
         const moveisComponents:JSX.Element[] = movies.map((movie: Movie) => {
             return (
                 <HomepageFilm 

@@ -15,6 +15,8 @@ function App() {
         <Route path='/' element={<LandingPage/>} />
         <Route path='/search' element={<LandingPage/>} />
         <Route path='/tvshows' element={<LandingPage/>} />
+        <Route path='/theaters' element={<LandingPage/>} />
+        <Route path='/topAllTime' element={<LandingPage/>} />
         <Route path='/movie/:id' element={<OneFilm/>} />
         <Route path='/tvshow/:id' element={<OneSeries/>} />
       </Routes>
