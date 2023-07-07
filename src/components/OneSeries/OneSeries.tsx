@@ -17,6 +17,7 @@ export default function OneSeries() {
         async function getTvShow() {
             if (id) {
                 const response = await getOneTvShow(id)
+                console.log(response);
                 setTvShows(response)
             }
         }
