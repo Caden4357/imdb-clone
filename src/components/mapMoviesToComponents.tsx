@@ -1,6 +1,11 @@
 import  HomepageFilm  from "./HomepageFilm";
 import {Movie} from "../types/MovieType";
-
+// type FilmProps = {
+//   id: number,
+//   title: string,
+//   poster_path: string,
+//   mediaType: string
+// }
 function mapMoviesToComponents(movies: Movie[]) {
     return movies.map((movie) => (
       <HomepageFilm

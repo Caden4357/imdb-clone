@@ -34,32 +34,24 @@ export default function LandingPage() {
         fetchData();
     }, [location.pathname, setMovies, setTvShows])
 
-
-    if (location.pathname === '/tvshows' && tvShows && Array.isArray(tvShows)) {
-        const tvShowComponents = mapTvShowsToComponents(tvShows);
-        return <HomepageFilmContainer>{tvShowComponents}</HomepageFilmContainer>;
+    let componentsToRender;
+    switch (location.pathname) {
+        case '/tvshows':
+            if(tvShows && Array.isArray(tvShows)){
+                componentsToRender = mapTvShowsToComponents(tvShows);
+            }
+            break;
+        case '/':
+        case '/search':
+        case '/theaters':
+        case '/topAllTime':
+            if(movies && Array.isArray(movies)){
+                componentsToRender = mapMoviesToComponents(movies);
+            }
+            break;
+        default:
+            componentsToRender = <Loading />
+            break;
     }
-    else if (location.pathname === '/' && movies && Array.isArray(movies)) {
-        const movieComponents = mapMoviesToComponents(movies);
-        return <HomepageFilmContainer>{movieComponents}</HomepageFilmContainer>;
-    }
-    else if (location.pathname === '/search' && movies && Array.isArray(movies)) {
-        const movieComponents = mapMoviesToComponents(movies);
-        return <HomepageFilmContainer>{movieComponents}</HomepageFilmContainer>;
-    }
-    else if (location.pathname === '/theaters' && movies && Array.isArray(movies)) {
-        const movieComponents = mapMoviesToComponents(movies);
-        return <HomepageFilmContainer>{movieComponents}</HomepageFilmContainer>;
-    }
-    else if (location.pathname === '/topAllTime' && movies && Array.isArray(movies)) {
-        const movieComponents = mapMoviesToComponents(movies);
-        return <HomepageFilmContainer>{movieComponents}</HomepageFilmContainer>;
-    }
-    else {
-        return (
-            <HomepageFilmContainer>
-                <Loading />
-            </HomepageFilmContainer>
-        )
-    }
+    return <HomepageFilmContainer>{componentsToRender}</HomepageFilmContainer>
 }
